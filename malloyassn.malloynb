@@ -1,0 +1,159 @@
+>>>malloy
+Source: HPI is duckdb.table('./hpi_master (1).csv') extend {
+    measure:
+    index_average is index_nsa.avg()
+}
+>>>malloy
+# line_chart
+run: HPI -> {
+    group_by: yr
+    aggregate: index_average
+    order_by: yr
+limit: 1000000
+}
+>>>malloy
+# line_chart
+run: HPI -> {
+    group_by: yr
+    aggregate: index_average
+    order_by: yr
+    where: place_name = "Spokane-Spokane Valley, WA"
+limit: 1000000
+}
+>>>malloy
+# line_chart
+run: HPI -> {
+    group_by: yr
+    aggregate: index_average
+    order_by: yr
+    where: place_name = "Seattle-Bellevue-Kent, WA (MSAD)"
+limit: 1000000
+}
+>>>malloy
+# line_chart
+run: HPI -> {
+    group_by: yr
+    aggregate: index_average
+    order_by: yr
+    where: place_name = "Chicago-Naperville-Evanston, IL (MSAD)"
+limit: 1000000
+}
+>>>malloy
+# line_chart
+run: HPI -> {
+    group_by: yr
+    aggregate: index_average
+    order_by: yr
+    where: place_name = "Bloomington, IL"
+limit: 1000000
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 1980
+    where: level = 'State'
+limit: 10
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2000
+    where: level = 'State'
+limit: 10
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2020
+    where: level = 'State'
+limit: 10
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average asc
+    where: yr = 1980
+    where: level = 'MSA'
+limit: 10
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average asc
+    where: yr = 2000
+    where: level = 'MSA'
+limit: 10
+}
+>>>malloy
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average asc
+    where: yr = 2020
+    where: level = 'MSA'
+limit: 10
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2007
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2010
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 1980
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 1990
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2000
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2010
+}
+>>>malloy
+# shape_map
+run: HPI -> {
+    group_by: place_name
+    aggregate: index_average
+    order_by: index_average desc
+    where: yr = 2020
+}
